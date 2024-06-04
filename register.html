@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Bookings</title>
+    <link rel="icon" href="./files/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        /* Style the select field */
+        .regiser-form{
+            width: 600px;
+        }
+        select {
+            background-color: rgb(26, 25, 25);
+            width: 575px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            
+            padding: 22px;
+            font-size: 16px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position-x: 100%;
+            background-position-y: 50%;
+        }
+
+        /* Remove the default arrow for different browsers */
+        select::-ms-expand {
+            display: none;
+        }
+
+        /* Style the options */
+        option {
+            background-color: black;
+            color: white;
+        }
+
+        /* Optional: style the form and label */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 8px;
+        }
+
+        label {
+            color: white;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+       
+        input{
+            width: 543px;
+        }
+        button{
+            width: 575px;
+            background-color: rgb(21,74,74);;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgb(21,74,74);;
+        }
+        button a{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+  
+    </style>
+</head>
+<body class="register-body">
+
+    <nav>
+        <img src="./files/logo.png" class="logo" alt="Logo" title="FirstFlight Travels">
+
+        <ul class="navbar">
+            <li>
+                <a href="./index.html">Home</a>
+                <a href="./register.html">Register</a>
+                <a href="./flight.html">Bookings</a>
+                
+                <a href="./ticket.php">Ticket</a>
+                <a href="./payment.html">Payment</a>
+                
+            </li>
+        </ul>
+    </nav>
+
+    <section class="registration">
+        <div class="register-form">
+          <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register <span>Here</span></h1>
+            <form action="user.php" method="post">
+              <label for="">Username</label>
+              
+              <input type="text" name="username" placeholder="Username" id="username" required>
+                <label for="">Full Name</label>
+                <input type="text" name="fullname" placeholder="Your Full Name" id="" required>
+                <label for="">Date of Birth</label>
+                <input type="date" name="dob" id="" required>
+                <label for="">Address</label>
+                <input type="text" name="Address" placeholder="Address" id="" required>
+                <label for="">Age</label>
+                <input type="tel" name="Age">
+                <label for="">Contact No.</label>
+                <input type="text" name="Connum" id="" required>
+                <label for="">gender</label>
+                <select name="gender" id="">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br><br>
+                <button type="submit" name="save">Submit</button><br><br>
+              <button type="submit">  <a href="flight.html">Next</a></button>
+            <!-- <input type="submit" value="Submit" class="submitbtn"> -->
+
+        </form>
+        </div>
+    </section>
+
+<!-- Footer -->
+
+<section class="footer">
+    <div class="foot">
+        <div class="footer-content">
+            
+            <div class="footlinks">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="./register.html">Register</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footlinks">
+                <h4>Connect</h4>
+                <div class="social">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" ><i class='bx bxl-instagram' ></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://www.linkedin.com/in/shaheer-siddiqui-714412247" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="#"><i class='bx bxl-youtube' ></i></a>
+                    <a href="#"><i class='bx bxl-wordpress' ></i></a>
+                    <a href="https://github.com/MShaheer15"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="end">
+        <p>Thank You For visiting Our Website.</p>
+</section>
+
+<!-- Javascript -->
+<script>
+    function validateform(){ 
+        var tel=document.getElementById("phonenum").value;  
+
+        if(tel.length<10){  
+            alert("Phone number must be of atleast 10 digits!");  
+            return false;  
+        } else if(isNaN(tel)){
+            alert("Phone number should not include character!");
+            return false;
+        }
+        return true;
+}  
+</script>
+
+</body>
+</html>

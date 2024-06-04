@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Bookings</title>
+    <link rel="icon" href="./files/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        .register-form {
+            width: 623px;
+        }
+        select {
+            background-color: rgb(26, 25, 25);
+            width: 575px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 22px;
+            font-size: 16px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position-x: 100%;
+            background-position-y: 50%;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+        option {
+            background-color: black;
+            color: white;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 8px;
+        }
+        label {
+            color: white;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 543px;
+        }
+        button {
+            width: 575px;
+            background-color: rgb(21,74,74);;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgb(21,74,74);
+        }
+    </style>
+    <script>
+        function updateContact() {
+            var airline = document.getElementById("airline").value;
+            var contactField = document.getElementById("contact");
+
+            var airlineContacts = {
+                "PIA": "111-222-333",
+                "Qatar Airways": "444-555-666",
+                "delta": "777-888-999",
+                "american": "123-456-789",
+                "united": "987-654-321",
+                "southwest": "333-444-555",
+                "jetblue": "666-777-888",
+                "alaska": "999-000-111"
+            };
+
+            contactField.value = airlineContacts[airline] || "";
+        }
+
+        function updateAmount() {
+            var classType = document.getElementById("class").value;
+            var amountField = document.getElementById("amount");
+
+            var classAmounts = {
+                "Premium": "35000",
+                "Business": "25000",
+                "Economy": "10000"
+            };
+
+            amountField.value = classAmounts[classType] || "0";
+        }
+    </script>
+</head>
+<body class="register-body">
+
+    <nav>
+        <img src="./files/logo.png" class="logo" alt="Logo" title="FirstFlight Travels">
+        <ul class="navbar">
+            <li>
+                <a href="./index.html">Home</a>
+                <a href="./register.html">Register</a>
+                <a href="./flight.html">Bookings</a>
+                <a href="./ticket.php">Ticket</a>
+                <a href="./payment.html">Payment</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="registration">
+        <div class="register-form">
+            <h1>&nbsp;Flight <span>Booking</span></h1>
+            <form action="flight.php" method="post">
+                <label for="">Flight No</label>
+                <input type="text" name="flight" id="">
+                <label for="airline">Airline Name:</label>
+                <select id="airline" name="airline" onchange="updateContact()">
+                    <option value="PIA">PIA</option>
+                    <option value="Qatar Airways">Qatar Airways</option>
+                    <option value="delta">Delta Airlines</option>
+                    <option value="american">American Airlines</option>
+                    <option value="united">United Airlines</option>
+                    <option value="southwest">Southwest Airlines</option>
+                    <option value="jetblue">JetBlue Airways</option>
+                    <option value="alaska">Alaska Airlines</option>
+                </select><br><br>
+                <label for="contact">Airline Contact Number:</label>
+                <input type="text" id="contact" name="contact" readonly>
+                <label for="source">Source:</label>
+                <input type="text" placeholder="Enter Your Source" name="source">
+                <label for="destination">Destination:</label>
+                <input type="text" placeholder="Enter Your Destination" name="destination">
+                <label for="deptime">Departure Time:</label>
+                <input type="time" class="time" placeholder="Enter Departure Time" name="deptime">
+                <label for="arrtime">Arrival Time:</label>
+                <input type="time" class="time" placeholder="Enter Arrival Time" name="arrtime">
+                <label for="seats">Number of Seats:</label>
+                <input type="tel" class="seats" name="seats">
+                <label for="seat_no">Seat Number:</label>
+                <input type="number" placeholder="Enter Seat Number" name="seat_no">
+                <label for="class">Class:</label>
+                <select name="class" id="class" onchange="updateAmount()">
+                    <option value="Premium">Premium</option>
+                    <option value="Business">Business</option>
+                    <option value="Economy">Economy</option>
+                </select><br><br>
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" readonly><br><br>
+                <button type="submit" name="save">Submit</button><br><br>
+                <button type=""><a href="payment.html" style="text-decoration: none; color: black;">Proceed to Payment</a></button>
+            </form>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="foot">
+            <div class="footer-content">
+                <div class="footlinks">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="./register.html">Register</a></li>
+                        <li><a href="./about.html">About Us</li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footlinks">
+                    <h4>Connect</h4>
+                    <div class="social">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="https://www.linkedin.com/in/shaheer-siddiqui-714412247" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#"><i class='bx bxl-youtube'></i></a>
+                        <a href="#"><i class='bx bxl-wordpress'></i></a>
+                        <a href="https://github.com/MShaheer15" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="end">
+            <p>Thank You For visiting Our Website.</p>
+        </div>
+    </section
